@@ -1,0 +1,81 @@
+<%= form_for(@text_msg) do |f| %>
+  <% if @text_msg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@text_msg.errors.count, "error") %> prohibited this text_msg from being saved:</h2>
+
+      <ul>
+      <% @text_msg.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :AccountSid %><br />
+    <%= f.text_field :AccountSid %>
+  </div>
+  <div class="field">
+    <%= f.label :Body %><br />
+    <%= f.text_field :Body %>
+  </div>
+  <div class="field">
+    <%= f.label :ToZip %><br />
+    <%= f.text_field :ToZip %>
+  </div>
+  <div class="field">
+    <%= f.label :FromState %><br />
+    <%= f.text_field :FromState %>
+  </div>
+  <div class="field">
+    <%= f.label :ToCity %><br />
+    <%= f.text_field :ToCity %>
+  </div>
+  <div class="field">
+    <%= f.label :SmsSid %><br />
+    <%= f.text_field :SmsSid %>
+  </div>
+  <div class="field">
+    <%= f.label :ToState %><br />
+    <%= f.text_field :ToState %>
+  </div>
+  <div class="field">
+    <%= f.label :To %><br />
+    <%= f.text_field :To %>
+  </div>
+  <div class="field">
+    <%= f.label :ToCountry %><br />
+    <%= f.text_field :ToCountry %>
+  </div>
+  <div class="field">
+    <%= f.label :FromCountry %><br />
+    <%= f.text_field :FromCountry %>
+  </div>
+  <div class="field">
+    <%= f.label :SmsMessageSid %><br />
+    <%= f.text_field :SmsMessageSid %>
+  </div>
+  <div class="field">
+    <%= f.label :ApiVersion %><br />
+    <%= f.text_field :ApiVersion %>
+  </div>
+  <div class="field">
+    <%= f.label :FromCity %><br />
+    <%= f.text_field :FromCity %>
+  </div>
+  <div class="field">
+    <%= f.label :SmsStatus %><br />
+    <%= f.text_field :SmsStatus %>
+  </div>
+  <div class="field">
+    <%= f.label :From %><br />
+    <%= f.text_field :From %>
+  </div>
+  <div class="field">
+    <%= f.label :FromZip %><br />
+    <%= f.text_field :FromZip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

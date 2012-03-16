@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120316185402) do
+ActiveRecord::Schema.define(:version => 20120316230111) do
 
   create_table "reminders", :force => true do |t|
     t.date     "date"
@@ -25,6 +25,27 @@ ActiveRecord::Schema.define(:version => 20120316185402) do
     t.text     "phrase"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "text_msgs", :force => true do |t|
+    t.string   "AccountSid"
+    t.string   "Body"
+    t.string   "ToZip"
+    t.string   "FromState"
+    t.string   "ToCity"
+    t.string   "SmsSid"
+    t.string   "ToState"
+    t.string   "To"
+    t.string   "ToCountry"
+    t.string   "FromCountry"
+    t.string   "SmsMessageSid"
+    t.string   "ApiVersion"
+    t.string   "FromCity"
+    t.string   "SmsStatus"
+    t.string   "From"
+    t.string   "FromZip"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

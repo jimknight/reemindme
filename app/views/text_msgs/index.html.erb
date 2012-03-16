@@ -1,0 +1,53 @@
+<h1>Listing text_msgs</h1>
+
+<table>
+  <tr>
+    <th>Accountsid</th>
+    <th>Body</th>
+    <th>Tozip</th>
+    <th>Fromstate</th>
+    <th>Tocity</th>
+    <th>Smssid</th>
+    <th>Tostate</th>
+    <th>To</th>
+    <th>Tocountry</th>
+    <th>Fromcountry</th>
+    <th>Smsmessagesid</th>
+    <th>Apiversion</th>
+    <th>Fromcity</th>
+    <th>Smsstatus</th>
+    <th>From</th>
+    <th>Fromzip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @text_msgs.each do |text_msg| %>
+  <tr>
+    <td><%= text_msg.AccountSid %></td>
+    <td><%= text_msg.Body %></td>
+    <td><%= text_msg.ToZip %></td>
+    <td><%= text_msg.FromState %></td>
+    <td><%= text_msg.ToCity %></td>
+    <td><%= text_msg.SmsSid %></td>
+    <td><%= text_msg.ToState %></td>
+    <td><%= text_msg.To %></td>
+    <td><%= text_msg.ToCountry %></td>
+    <td><%= text_msg.FromCountry %></td>
+    <td><%= text_msg.SmsMessageSid %></td>
+    <td><%= text_msg.ApiVersion %></td>
+    <td><%= text_msg.FromCity %></td>
+    <td><%= text_msg.SmsStatus %></td>
+    <td><%= text_msg.From %></td>
+    <td><%= text_msg.FromZip %></td>
+    <td><%= link_to 'Show', text_msg %></td>
+    <td><%= link_to 'Edit', edit_text_msg_path(text_msg) %></td>
+    <td><%= link_to 'Destroy', text_msg, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Text msg', new_text_msg_path %>
