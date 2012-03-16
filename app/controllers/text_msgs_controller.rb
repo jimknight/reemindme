@@ -8,6 +8,7 @@ class TextMsgsController < ApplicationController
     if params[:text_msg]
       @text_msg = TextMsg.new(params[:text_msg])
     else
+      binding.pry
       @text_msg = TextMsg.new(params)
     end
     if @text_msg.save
