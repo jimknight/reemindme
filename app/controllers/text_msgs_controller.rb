@@ -10,5 +10,11 @@ class TextMsgsController < ApplicationController
     else
       @text_msg = TextMsg.new(params)
     end
+    if @text_msg.save
+      render :text => "<Response><Sms>test</Sms></Response>"
+    else
+      # report this error
+      render :text => "<Response><Sms>something went wrong</Sms></Response>"
+    end
     
 end
