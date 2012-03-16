@@ -4,6 +4,10 @@ class TextMsgsController < ApplicationController
     @text_msgs = TextMsg.all
   end
   
+  def new
+    @text_msg = TextMsg.new
+  end
+  
   def create
     if params[:text_msg]
       @text_msg = TextMsg.new(params[:text_msg])
