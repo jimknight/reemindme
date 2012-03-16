@@ -16,5 +16,6 @@ class TextMsgsController < ApplicationController
       # report this error
       render :text => "<Response><Sms>something went wrong</Sms></Response>"
     end
+  end
     
 end
