@@ -11,6 +11,7 @@ gem 'chronic'
 gem 'jquery-rails'
 gem 'nickel', :git => 'git://github.com/jcarbo/nickel.git'
 gem 'pg'
+gem 'twilio-ruby'
 
 # Gems used only for assets and not required
 # in production environments by default.
