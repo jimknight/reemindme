@@ -11,12 +11,15 @@ private
   def create_event
     parsed_response = Nickel.parse(phrase)
     date_str = parsed_response.occurrences.first.start_date.date
-    time_str = convert_raw_time(parsed_response.occurrences.first.start_time.time)
-    Reminder.create!(
+    @reminder = Reminder.new(
       :title => parsed_response.message,
-      :date => date_str.to_date,
-      :time => "#{date_str} #{time_str} EDT".to_time
+      :date => date_str.to_date
     )
+    if parsed_response.occurrences.first.start_time
+      time_str = convert_raw_time(parsed_response.occurrences.first.start_time.time)
+      @reminder.time = "#{date_str} #{time_str} EDT".to_time
+    end
+    @reminder.save!
   end
   
 end

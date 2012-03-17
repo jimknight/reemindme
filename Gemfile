@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'annotate'
 gem 'capistrano'
+gem 'chronic'
 gem 'jquery-rails'
 gem 'nickel', :git => 'git://github.com/jcarbo/nickel.git'
 gem 'pg'

@@ -7,4 +7,8 @@ describe Request do
     Reminder.last.date.should == "2012-07-07".to_date
     Reminder.last.time.should == "2012-07-07 9:00 AM EDT".to_time
   end
+  it "should create an event without a time" do
+    Request.create!(:phrase => "buy some green pants at Kohls on saturday")
+    Reminder.last.date.should == Chronic.parse("this saturday").to_date
+  end
 end
