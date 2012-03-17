@@ -10,14 +10,12 @@ class TextMsgsController < ApplicationController
   
   def create
     if params[:text_msg]
-            logger.info params
       @text_msg = TextMsg.new(params[:text_msg])
     else
-      logger.info params
       @text_msg = TextMsg.new(:Body => params[:Body])
     end
     if @text_msg.save
-      render :text => "<Response><Sms>test</Sms></Response>"
+      render :text => "<Response><Sms>Got it!</Sms></Response>"
     else
       # report this error
       render :text => "<Response><Sms>something went wrong</Sms></Response>"
