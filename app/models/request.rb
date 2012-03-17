@@ -23,3 +23,14 @@ private
   end
   
 end
+
+# == Schema Information
+#
+# Table name: requests
+#
+#  id         :integer         not null, primary key
+#  phrase     :text
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
