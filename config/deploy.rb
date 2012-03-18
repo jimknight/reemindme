@@ -1,4 +1,6 @@
 require "bundler/capistrano"
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
 load 'deploy/assets'
 
 set   :domain,        "69.172.229.224"

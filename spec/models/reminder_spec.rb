@@ -10,7 +10,3 @@ describe Reminder do
     end
   end
 end
-
-#  date       :date
-#  time       :datetime
-#  title      :text
