@@ -1,6 +1,6 @@
 class Reminder < ActiveRecord::Base
   
-  scope :next_hour, where(:time => (Time.now)..(1.hour.from_now))
+  scope :next_hour, where(:time => (Time.zone.now)..(Time.zone.now + 3600))
   
 end
 
