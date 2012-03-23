@@ -2,13 +2,14 @@ class Notify
   
   def self.send_text(message)
     require 'twilio-ruby'
-    account_sid = ENV['TWILIO_ID']
-    auth_token = ENV['TWILIO_SECRET']
-    # set up a client to talk to the Twilio REST API
+    @config = YAML.load_file("#{Rails.root}/config/twilio.yml")
+    binding.pry
+    account_sid = @config['twilio_id']
+    auth_token = @config['twilio_secret']
     @client = Twilio::REST::Client.new account_sid, auth_token
     @client.account.sms.messages.create(
-      :from => ENV['TWILIO_PHONE'],
-      :to => ENV['JIMS_PHONE'],
+      :from => @config['twilio_phone'],
+      :to => @config['jims_phone'],
       :body => message
     )
   end
