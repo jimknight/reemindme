@@ -24,8 +24,12 @@ set :deploy_to, "/home/#{user}/#{application}"
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
-  upload("#{Rails.root}/config/twilio.yml", "#{current_path}/config/twilio.yml")
+  task :upload_settings, :roles => :app do
+    top.upload("config/twilio.yml", "#{release_path}/config/twilio.yml", :via => :scp)
+  end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
+
+after 'deploy:update_code', 'deploy:upload_settings'
