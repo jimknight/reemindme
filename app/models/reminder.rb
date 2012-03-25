@@ -1,6 +1,7 @@
 class Reminder < ActiveRecord::Base
   
   scope :next_hour, where(:time => (Time.zone.now)..(Time.zone.now + 3600))
+  scope :next_day, where(:date => 1.day.from_now.to_date).where(:time => nil)  
   
 end
 
