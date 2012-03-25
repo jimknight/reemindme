@@ -11,3 +11,9 @@
 The config/deploy.rb will upload the config/twilio.yml. Make sure it's in your .gitignore.
 
 I'll eventually change it from jims_phone to something generic.
+
+### Gotchas
+#### /bin/bash: bundle: command not found
+Found a solution to setting the path in schedule.rb in this gist
+
+[https://gist.github.com/950975](http://url.com/ "gist")

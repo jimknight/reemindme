@@ -19,10 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-# stdout is ignored, and stderror is sent normally for cron to take care of, which
-# probably means it is emailed to the user whose crontab whenever writes to
-set :output, {:standard => nil}
-
 # If your ruby binary isn't in a standard place (for example if it's in /usr/local/bin,
 # because you installed it yourself from source, or from a thid-party package like REE),
 # this tells whenever (or really, the rails runner) where to find it.
