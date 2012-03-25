@@ -17,3 +17,6 @@ I'll eventually change it from jims_phone to something generic.
 Found a solution to setting the path in schedule.rb in this gist
 
 [https://gist.github.com/950975](http://url.com/ "gist")
+
+# Todo
+## After notification sent for daily, mark as processed and stop running

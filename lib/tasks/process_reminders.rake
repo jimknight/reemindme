@@ -1,7 +1,7 @@
 task :process_reminders => :environment do
-  # find next hour's reminders
+  
+  # Time events
   Reminder.next_hour.each do |reminder|
-    # process each reminder
     if reminder.time
       message = "#{reminder.title} at #{pretty_time(reminder.time)} on #{reminder.date}"
     else
@@ -10,6 +10,14 @@ task :process_reminders => :environment do
     puts message if Rails.env == "development"
     Notify.send_text(message)
   end
+  
+  # All day events
+  Reminder.next_day.each do |reminder|
+    message = "#{reminder.title} on #{reminder.date}"
+    puts message if Rails.env == "development"
+    Notify.send_text(message)
+  end
+  
 end
 
 def pretty_time(time)
