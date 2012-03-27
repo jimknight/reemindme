@@ -9,6 +9,8 @@ task :process_reminders => :environment do
     end
     puts message if Rails.env == "development"
     Notify.send_text(message)
+    reminder.processed = true
+    reminder.save!
   end
   
   # All day events
@@ -16,6 +18,8 @@ task :process_reminders => :environment do
     message = "#{reminder.title} on #{reminder.date}"
     puts message if Rails.env == "development"
     Notify.send_text(message)
+    reminder.processed = true
+    reminder.save!
   end
   
 end
