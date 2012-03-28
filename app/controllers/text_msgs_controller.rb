@@ -15,7 +15,8 @@ class TextMsgsController < ApplicationController
       @text_msg = TextMsg.new(:Body => params[:Body])
     end
     if @text_msg.save
-      render :text => "<Response><Sms>Got it!</Sms></Response>"
+      # render :text => "<Response><Sms>Got it!</Sms></Response>"
+      render :text => ""
     else
       # report this error
       render :text => "<Response><Sms>something went wrong</Sms></Response>"
