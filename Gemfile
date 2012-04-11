@@ -8,10 +8,13 @@ gem 'rails', '3.2.1'
 gem 'annotate'
 gem 'capistrano'
 gem 'chronic'
+gem 'google-api-client'
 gem 'jquery-rails'
 gem 'nickel', :git => 'git://github.com/jcarbo/nickel.git'
+gem 'oauth2'
 gem 'pg'
 gem 'twilio-ruby'
+gem 'rest-client'
 gem 'whenever', :require => false
 
 # Gems used only for assets and not required
