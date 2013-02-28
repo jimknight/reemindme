@@ -5,7 +5,6 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'annotate'
 gem 'capistrano'
 gem 'chronic'
 gem 'jquery-rails'
@@ -27,6 +26,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'annotate'
   gem 'pry'
   gem "rspec-rails", "~> 2.6"
 end
