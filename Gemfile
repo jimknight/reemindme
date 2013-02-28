@@ -5,13 +5,14 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'capistrano'
+gem 'capistrano'
 # gem 'chronic'
 # gem 'jquery-rails'
 # gem 'nickel', :git => 'git://github.com/jcarbo/nickel.git'
 gem 'pg'
 # gem 'twilio-ruby'
 # gem 'whenever', :require => false
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
