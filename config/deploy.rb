@@ -1,6 +1,6 @@
 require "bundler/capistrano"
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
+# set :whenever_command, "bundle exec whenever"
+# require "whenever/capistrano"
 
 load "config/recipes/base"
 load "config/recipes/nginx"
@@ -28,12 +28,12 @@ ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :upload_settings, :roles => :app do
-    top.upload("config/twilio.yml", "#{release_path}/config/twilio.yml", :via => :scp)
-  end
-end
+# namespace :deploy do
+#   task :start do ; end
+#   task :stop do ; end
+#   task :upload_settings, :roles => :app do
+#     top.upload("config/twilio.yml", "#{release_path}/config/twilio.yml", :via => :scp)
+#   end
+# end
 
-after 'deploy:update_code', 'deploy:upload_settings'
+# after 'deploy:update_code', 'deploy:upload_settings'
