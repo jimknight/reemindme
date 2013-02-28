@@ -1,34 +1,38 @@
 require "bundler/capistrano"
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
-load 'deploy/assets'
 
-set   :domain,        "69.172.229.224"
-role  :web,           domain
-role  :app,           domain
-role  :db,            domain, :primary => true
+load "config/recipes/base"
+load "config/recipes/nginx"
+load "config/recipes/unicorn"
+load "config/recipes/postgresql"
+load "config/recipes/nodejs"
+load "config/recipes/rbenv"
+load "config/recipes/check"
 
-# Fill user in - if remote user is different to your local user
-set :user, "rails"
+server "198.211.96.39", :web, :app, :db, primary: true
+
+set :user, "deployer"
+set :application, "reemindme"
+set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_via, :remote_cache
+set :use_sudo, false
+set :host_name, "reemindme.com"
+
+set :scm, "git"
+set :repository, "git@github.com:jimknight/#{application}.git"
+set :branch, "master"
 
 default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 
-set :application, "reemindme"
-set :scm, :git
-#set :repository,  "git://github.com/jimknight/Discovery.git"
-set :repository,  "."
-set :deploy_via, :copy
-set :deploy_to, "/home/#{user}/#{application}"
+after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :upload_settings, :roles => :app do
     top.upload("config/twilio.yml", "#{release_path}/config/twilio.yml", :via => :scp)
-  end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
 
