@@ -23,6 +23,7 @@ run "#{sudo} apt-get -y install build-essential zlib1g-dev libssl-dev libreadlin
     run "rbenv install #{ruby_version}"
     run "rbenv global #{ruby_version}"
     run "gem install bundler --no-ri --no-rdoc"
+    run "gem install whenever --no-ri --no-rdoc"
     run "rbenv rehash"
   end
   after "deploy:install", "rbenv:install"
