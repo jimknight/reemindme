@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'nickel', :git => 'git://github.com/jcarbo/nickel.git'
 gem 'pg'
 gem 'twilio-ruby'
-gem 'whenever', :require => false
+gem 'whenever'
 gem 'unicorn'
 
 # Gems used only for assets and not required
